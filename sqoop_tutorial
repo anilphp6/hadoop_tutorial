@@ -1,1 +1,42 @@
 sqoop commands 
+Q1-If the table to which data is being exported has more columns than the data present in the hdfs file then
+Ans-The load can be done only for the relevant columns present in HDFS file
+
+Q2- --batch mode used for batch process if records more than 5 Million
+
+Q3 --direct is only supported in mysql and postgresq and 
+To be short and precise,its the mode for fast import which doesn't runs any mappers or reducers.
+
+Q4. --call is used to call for store procedure 
+
+Q5.–update-key , --update-mode
+Anchor column to use for updates. Use a comma separated list of columns if there are more than one column.
+Specify how updates are performed when new rows are found with non-matching keys in database. 
+Legal values for mode include updateonly (default) and allowinsert. 
+
+Q6.--options-file   options file 
+To specify an options file, simply create an options file in a convenient location and pass it to the command line via --options-file argument
+$ sqoop import --connect jdbc:mysql://localhost/db --username foo --table TEST
+
+$ sqoop --options-file /users/homer/work/import.txt --table TEST
+
+import.text{import
+--connect
+jdbc:mysql://localhost/db
+--username
+foo}
+
+Q7.--verbose print more informations in command line
+
+Q8. --boundary-query 
+By default sqoop will use query select min(<split-by>), max(<split-by>) from <table name> to find out boundaries for 
+creating splits. In some cases this query is not the most optimal so you can specify any arbitrary query returning two 
+numeric columns using --boundary-query argument.
+
+Q9. --delete-target-dir : Delete the import target directory if it exists 
+
+Q10. --hive-drop-import-delims : removes all the \n,\t and \01 characters
+
+Q11. 
+
+
